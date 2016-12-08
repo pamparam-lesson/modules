@@ -46,6 +46,14 @@ return [
         'log' => [
             'class' => 'yii\log\Dispatcher',
         ],
+        'i18n' => [
+            'translations' => [
+                'app' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'forceTranslation' => true,
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];
