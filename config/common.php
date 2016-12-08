@@ -6,6 +6,7 @@ $params = ArrayHelper::merge(
     require(__DIR__ . '/params-local.php')
 );
 return [
+    'name' => 'Zululu',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'modules' => [

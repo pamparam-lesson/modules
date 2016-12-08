@@ -2,6 +2,7 @@
 $config = [
     'id' => 'app',
     'defaultRoute' => 'main/default/index',
+    'language' => 'ru-RU',
     'components' => [
         'user' => [
             'identityClass' => 'app\modules\user\models\User',
