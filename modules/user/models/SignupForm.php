@@ -35,7 +35,7 @@ class SignupForm extends Model
         ];
     }
 
-//    TODO  остановился на удалении лишнего заголовок
+
     /**
      * Signs user up.
      *

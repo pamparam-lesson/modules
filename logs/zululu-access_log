@@ -209,3 +209,10 @@
 127.0.0.1 - - [08/Dec/2016:22:55:49 +0300] "GET /favicon.ico HTTP/1.1" 200 318
 127.0.0.1 - - [08/Dec/2016:22:56:10 +0300] "GET /web/login HTTP/1.1" 200 26674
 127.0.0.1 - - [08/Dec/2016:22:56:10 +0300] "GET /web/debug/default/toolbar?tag=5849bada48585 HTTP/1.1" 200 6343
+127.0.0.1 - - [10/Dec/2016:21:10:51 +0300] "GET / HTTP/1.1" 200 25829
+127.0.0.1 - - [10/Dec/2016:21:10:52 +0300] "GET /web/css/site.css HTTP/1.1" 200 1842
+127.0.0.1 - - [10/Dec/2016:21:10:52 +0300] "GET /web/assets/7f075e77/css/bootstrap.css HTTP/1.1" 200 146010
+127.0.0.1 - - [10/Dec/2016:21:10:52 +0300] "GET /web/assets/6647ed56/yii.js HTTP/1.1" 200 18129
+127.0.0.1 - - [10/Dec/2016:21:10:52 +0300] "GET /web/assets/564fe696/jquery.js HTTP/1.1" 200 257551
+127.0.0.1 - - [10/Dec/2016:21:10:52 +0300] "GET /web/assets/7f075e77/js/bootstrap.js HTTP/1.1" 200 69707
+127.0.0.1 - - [10/Dec/2016:21:10:52 +0300] "GET /web/debug/default/toolbar?tag=584c452c04d69 HTTP/1.1" 200 6343
