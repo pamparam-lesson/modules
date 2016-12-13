@@ -12,6 +12,8 @@ return [
     'BUTTON_UPDATE' => 'Редактировать',
     'BUTTON_DELETE' => 'Удалить',
 
+    'TITLE_CONTACT' => 'Связь',
+
     'HELLO {username}' => 'Здравствуйте, {username}!',
     'FOLLOW_TO_RESET_PASSWORD' => 'Для смены пароля пройдите по ссылке:',
     'FOLLOW_TO_CONFIRM_EMAIL' => 'Для подтверждения адреса пройдите по ссылке:',

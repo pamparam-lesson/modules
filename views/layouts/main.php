@@ -45,9 +45,15 @@ AppAsset::register($this);
                 false,
             Yii::$app->user->isGuest ?
                 ['label' => Yii::t('app', 'NAV_LOGIN'), 'url' => ['/user/default/login']] :
+                false,
+            !Yii::$app->user->isGuest ?
+                ['label' => Yii::t('app', 'NAV_PROFILE'), 'url' => ['/user/profile/index']] :
+                false,
+            !Yii::$app->user->isGuest ?
                 ['label' => Yii::t('app', 'NAV_LOGOUT'),
                     'url' => ['/user/default/logout'],
-                    'linkOptions' => ['data-method' => 'post']],
+                    'linkOptions' => ['data-method' => 'post']] :
+                false,
         ]),
     ]);
 
