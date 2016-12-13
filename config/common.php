@@ -10,6 +10,9 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+        ],
         'main' => [
             'class' => 'app\modules\main\Module',
         ],
