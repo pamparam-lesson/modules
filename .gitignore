@@ -11,7 +11,7 @@ nbproject
 
 # windows thumbnail cache
 Thumbs.db
-
+.htaccess
 # composer vendor dir
 vendor
 
@@ -28,3 +28,5 @@ phpunit.phar
 
 tests/_output/*
 tests/_support/_generated
+.gitignore
+logs
