@@ -41,7 +41,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'created_at',
                 'format' => 'datetime',
             ],
-            'username',
             [
                 'class' => LinkColumn::className(),
                 'attribute' => 'username',
