@@ -26,7 +26,8 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-tests/_output/*
+tests/_
+output/*
 tests/_support/_generated
 .gitignore
 logs

@@ -388,3 +388,15 @@
 127.0.0.1 - - [14/Dec/2016:13:32:18 +0300] "GET /web/debug/default/toolbar?tag=58511fb214ee4 HTTP/1.1" 200 3528
 127.0.0.1 - - [14/Dec/2016:13:32:19 +0300] "GET /web/user/profile/update HTTP/1.1" 200 7543
 127.0.0.1 - - [14/Dec/2016:13:32:19 +0300] "GET /web/debug/default/toolbar?tag=58511fb34c764 HTTP/1.1" 200 3529
+127.0.0.1 - - [14/Dec/2016:13:44:35 +0300] "GET /web/admin/users HTTP/1.1" 200 7622
+127.0.0.1 - - [14/Dec/2016:13:44:35 +0300] "GET /web/debug/default/toolbar?tag=585122936a587 HTTP/1.1" 200 3531
+127.0.0.1 - - [14/Dec/2016:13:44:37 +0300] "GET /web/admin/users HTTP/1.1" 200 7618
+127.0.0.1 - - [14/Dec/2016:13:44:37 +0300] "GET /web/assets/91707c1b/css/font-awesome.css HTTP/1.1" 200 7777
+127.0.0.1 - - [14/Dec/2016:13:44:37 +0300] "GET /web/assets/7f075e77/css/bootstrap.css HTTP/1.1" 200 21669
+127.0.0.1 - - [14/Dec/2016:13:44:37 +0300] "GET /web/css/site.css HTTP/1.1" 200 1103
+127.0.0.1 - - [14/Dec/2016:13:44:37 +0300] "GET /web/assets/564fe696/jquery.js HTTP/1.1" 200 77047
+127.0.0.1 - - [14/Dec/2016:13:44:37 +0300] "GET /web/assets/6647ed56/yii.js HTTP/1.1" 200 5276
+127.0.0.1 - - [14/Dec/2016:13:44:37 +0300] "GET /web/assets/b3896e32/jquery.pjax.js HTTP/1.1" 200 9289
+127.0.0.1 - - [14/Dec/2016:13:44:37 +0300] "GET /web/assets/7f075e77/js/bootstrap.js HTTP/1.1" 200 14798
+127.0.0.1 - - [14/Dec/2016:13:44:37 +0300] "GET /web/assets/6647ed56/yii.gridView.js HTTP/1.1" 200 2297
+127.0.0.1 - - [14/Dec/2016:13:44:37 +0300] "GET /web/debug/default/toolbar?tag=58512295316e1 HTTP/1.1" 200 3531

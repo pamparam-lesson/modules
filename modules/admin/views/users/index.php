@@ -1,5 +1,6 @@
 <?php
 
+use app\components\grid\ActionColumn;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
@@ -35,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'email:email',
             // 'status',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => ActionColumn::className()],
         ],
     ]); ?>
 <?php Pjax::end(); ?></div>
