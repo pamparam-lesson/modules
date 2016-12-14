@@ -1,5 +1,7 @@
 <?php
 
+use app\modules\admin\models\User;
+use app\components\grid\SetColumn;
 use app\components\grid\ActionColumn;
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -34,7 +36,17 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'password_hash',
             // 'password_reset_token',
             // 'email:email',
-            // 'status',
+            [
+                'class' => SetColumn::className(),
+                'filter' => User::getStatusesArray(),
+                'attribute' => 'status',
+                'name' => 'statusName',
+                'cssCLasses' => [
+                    User::STATUS_ACTIVE  => 'success',
+                    User::STATUS_WAIT    => 'warning',
+                    User::STATUS_BLOCKED => 'default',
+                ],
+            ],
 
             ['class' => ActionColumn::className()],
         ],
