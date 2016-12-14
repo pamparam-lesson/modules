@@ -17,13 +17,15 @@ class UserSearch extends Model
     public $password_hash;
     public $password_reset_token;
     public $auth_key;
-
+    public $date_from;
+    public $date_to;
 
     public function rules()
     {
         return [
             [['id', 'status'], 'integer'],
             [['username', 'email'], 'safe'],
+            [['date_from', 'date_to'], 'date', 'format' => 'php:Y-m-d'],
         ];
     }
 
@@ -36,9 +38,18 @@ class UserSearch extends Model
             'username' => Yii::t('app', 'USER_USERNAME'),
             'email' => Yii::t('app', 'USER_EMAIL'),
             'status' => Yii::t('app', 'USER_STATUS'),
+            'date_from' => Yii::t('app', 'USER_DATE_FROM'),
+            'date_to' => Yii::t('app', 'USER_DATE_TO'),
         ];
     }
 
+    /**
+     * Creates data provider instance with search query applied
+     *
+     * @param array $params
+     *
+     * @return ActiveDataProvider
+     */
     public function search($params)
     {
         $query = User::find();
@@ -50,28 +61,23 @@ class UserSearch extends Model
             ]
         ]);
 
-          $this->load($params);
+        $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+            $query->where('0=1');
             return $dataProvider;
         }
 
-        // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
             'status' => $this->status,
         ]);
 
-        $query->andFilterWhere(['like', 'username', $this->username])
-            ->andFilterWhere(['like', 'auth_key', $this->auth_key])
-            ->andFilterWhere(['like', 'email_confirm_token', $this->email_confirm_token])
-            ->andFilterWhere(['like', 'password_hash', $this->password_hash])
-            ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
-            ->andFilterWhere(['like', 'email', $this->email]);
+        $query
+            ->andFilterWhere(['like', 'username', $this->username])
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['>=', 'created_at', $this->date_from ? strtotime($this->date_from . ' 00:00:00') : null])
+            ->andFilterWhere(['<=', 'created_at', $this->date_to ? strtotime($this->date_to . ' 23:59:59') : null]);
 
         return $dataProvider;
     }

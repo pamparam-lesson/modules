@@ -3,6 +3,8 @@
 use app\modules\admin\models\User;
 use app\components\grid\SetColumn;
 use app\components\grid\ActionColumn;
+use kartik\date\DatePicker;
+use app\components\grid\LinkColumn;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
@@ -21,21 +23,30 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a(Yii::t('app', 'Create User'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-<?php Pjax::begin(); ?>    <?= GridView::widget([
+<?php Pjax::begin(); ?>
+    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'created_at',
-            'updated_at',
+            [
+                'filter' => DatePicker::widget([
+                    'model' => $searchModel,
+                    'attribute' => 'date_from',
+                    'attribute2' => 'date_to',
+                    'type' => DatePicker::TYPE_RANGE,
+                    'separator' => '-',
+                    'pluginOptions' => ['format' => 'yyyy-mm-dd']
+                ]),
+                'attribute' => 'created_at',
+                'format' => 'datetime',
+            ],
             'username',
-            'auth_key',
-            // 'email_confirm_token:email',
-            // 'password_hash',
-            // 'password_reset_token',
-            // 'email:email',
+            [
+                'class' => LinkColumn::className(),
+                'attribute' => 'username',
+            ],
+             'email:email',
             [
                 'class' => SetColumn::className(),
                 'filter' => User::getStatusesArray(),

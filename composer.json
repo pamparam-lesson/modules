@@ -20,7 +20,9 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "FortAwesome/Font-Awesome": "*",
         "bower-asset/html5shiv": "*",
-        "bower-asset/respond": "*"
+        "bower-asset/respond": "*",
+        "kartik-v/yii2-widget-datepicker": "*",
+        "kartik-v/yii2-field-range": "*"
 
     },
     "require-dev": {
