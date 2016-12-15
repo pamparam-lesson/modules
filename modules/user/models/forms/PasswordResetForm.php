@@ -6,8 +6,9 @@
  * Time: 20:04
  */
 
-namespace app\modules\user\models;
+namespace app\modules\user\models\forms;
 
+use app\modules\user\models\User;
 use yii\base\Model;
 use yii\base\InvalidParamException;
 
