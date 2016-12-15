@@ -2,23 +2,19 @@
 
 namespace app\modules\user;
 
-/**
- * user module definition class
- */
+use yii\console\Application as ConsoleApplication;
+use Yii;
+
 class Module extends \yii\base\Module
 {
-    /**
-     * @inheritdoc
-     */
     public $controllerNamespace = 'app\modules\user\controllers';
 
-    /**
-     * @inheritdoc
-     */
     public function init()
     {
         parent::init();
 
-        // custom initialization code goes here
+        if (Yii::$app instanceof ConsoleApplication) {
+            $this->controllerNamespace = 'app\modules\user\commands';
+        }
     }
 }
