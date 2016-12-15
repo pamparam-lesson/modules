@@ -8,11 +8,12 @@ use app\components\grid\LinkColumn;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use app\modules\user\Module;
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\admin\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Users');
+$this->title = Module::t('module', 'ADMIN_USERS');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
@@ -21,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create User'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Module::t('module', 'ADMIN_USERS_ADD'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>
     <?= GridView::widget([

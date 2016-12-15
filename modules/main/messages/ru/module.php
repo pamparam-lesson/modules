@@ -6,6 +6,6 @@ return [
     'CONTACT_EMAIL' => 'Ваш Email',
     'CONTACT_SUBJECT' => 'Тема',
     'CONTACT_MESSAGE' => 'Сообщение',
-    'CONTACT_VERIFY_CODE' => 'Код',
+    'CONTACT_VERIFY_CODE' => 'Проверочный код',
     'CONTACT_THANKS' => 'Спасибо! Мы свяжемся с Вами в скором  времени.',
 ];

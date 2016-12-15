@@ -3,6 +3,7 @@
 use app\modules\admin\models\User;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\modules\user\Module;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\User */
@@ -25,7 +26,7 @@ use yii\widgets\ActiveForm;
 
     <div class="form-group">
         <?= Html::submitButton(
-            $model->isNewRecord ? Yii::t('app', 'BUTTON_CREATE') : Yii::t('app', 'BUTTON_CREATE'),
+            $model->isNewRecord ? Module::t('module', 'BUTTON_CREATE') : Module::t('module', 'BUTTON_CREATE'),
             ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
         ) ?>
     </div>
