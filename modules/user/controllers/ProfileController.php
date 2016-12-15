@@ -1,8 +1,8 @@
 <?php
 namespace app\modules\user\controllers;
 
-use app\modules\user\models\ProfileUpdateForm;
-use app\modules\user\models\PasswordChangeForm;
+use app\modules\user\models\forms\ProfileUpdateForm;
+use app\modules\user\models\forms\PasswordChangeForm;
 use app\modules\user\models\User;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -49,7 +49,7 @@ class ProfileController extends Controller
         $user = $this->findModel();
         $model = new ProfileUpdateForm($user);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->update()) {
             return $this->redirect(['index']);
         } else {
             return $this->render('update', [
