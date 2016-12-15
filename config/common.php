@@ -8,7 +8,12 @@ $params = ArrayHelper::merge(
 return [
     'name' => 'Zululu',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        'app\modules\admin\Bootstrap',
+        'app\modules\main\Bootstrap',
+        'app\modules\user\Bootstrap',
+    ],
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
