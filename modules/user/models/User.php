@@ -8,6 +8,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use yii\base\NotSupportedException;
+use app\modules\user\Module;
 
 /**
  * This is the model class for table "{{%user}}".
@@ -63,12 +64,12 @@ class User extends ActiveRecord implements IdentityInterface
 
             ['username', 'required'],
             ['username', 'match', 'pattern' => '#^[\w_-]+$#i'],
-            ['username', 'unique', 'targetClass' => User::className(), 'message' => Yii::t('app', 'ERROR_USERNAME_EXISTS')],
+            ['username', 'unique', 'targetClass' => User::className(), 'message' => Module::t('module', 'ERROR_USERNAME_EXISTS')],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass' => User::className(), 'message' => Yii::t('app', 'ERROR_EMAIL_EXISTS')],
+            ['email', 'unique', 'targetClass' => User::className(), 'message' => Module::t('module', 'ERROR_EMAIL_EXISTS')],
             ['email', 'string', 'max' => 255],
 
             ['status', 'integer'],
@@ -88,15 +89,19 @@ class User extends ActiveRecord implements IdentityInterface
             self::SCENARIO_PROFILE => 'email']);
     }
 
+    /**
+     * @inheritdoc
+     */
     public function attributeLabels()
     {
         return [
             'id' => 'ID',
-            'created_at' => 'Создан',
-            'updated_at' => 'Обновлён',
-            'username' => 'Имя пользователя',
-            'email' => 'Email',
-            'status' => 'Статус',
+            'created_at' => Module::t('module', 'USER_CREATED'),
+            'updated_at' => Module::t('module', 'USER_UPDATED'),
+            'username' => Module::t('module', 'USER_USERNAME'),
+            'email' => Module::t('module', 'USER_EMAIL'),
+            'status' => Module::t('module', 'USER_STATUS'),
+            'role' => Module::t('module', 'USER_ROLE'),
         ];
     }
 

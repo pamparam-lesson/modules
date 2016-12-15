@@ -1,6 +1,7 @@
 <?php
 namespace app\modules\user\models\forms;
 
+use app\modules\user\Module;
 use app\modules\user\models\User;
 use yii\base\Model;
 use yii\db\ActiveQuery;
@@ -36,7 +37,7 @@ class ProfileUpdateForm extends Model
                 'email',
                 'unique',
                 'targetClass' => User::className(),
-                'message' => Yii::t('app', 'ERROR_EMAIL_EXISTS'),
+                'message' => Module::t('module', 'ERROR_EMAIL_EXISTS'),
                 'filter' => ['<>', 'id', $this->_user->id],
             ],
             ['email', 'string', 'max' => 255],

@@ -1,6 +1,7 @@
 <?php
 namespace app\modules\user\models\forms;
 
+use app\modules\user\Module;
 use app\modules\user\models\User;
 use yii\base\Model;
 use Yii;
@@ -21,18 +22,32 @@ class SignupForm extends Model
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
             ['username', 'match', 'pattern' => '#^[\w_-]+$#i'],
-            ['username', 'unique', 'targetClass' => User::className(), 'message' => Yii::t('app', 'ERROR_USERNAME_EXISTS')],
+            ['username', 'unique', 'targetClass' => User::className(), 'message' => Module::t('module', 'ERROR_USERNAME_EXISTS')],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass' => User::className(), 'message' => Yii::t('app', 'ERROR_EMAIL_EXISTS')],
+            ['email', 'unique', 'targetClass' => User::className(), 'message' => Module::t('module', 'ERROR_EMAIL_EXISTS')],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
 
             ['verifyCode', 'captcha', 'captchaAction' => '/user/default/captcha'],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'email'      => Module::t('module', 'USER_EMAIL'),
+            'username'   => Module::t('module', 'USER_USERNAME'),
+            'password'   => Module::t('module', 'USER_PASSWORD'),
+            'verifyCode' => Module::t('module', 'USER_VERIFY_CODE'),
+
         ];
     }
 
