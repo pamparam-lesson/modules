@@ -23,6 +23,7 @@ return [
         ],
         'user' => [
             'class' => 'app\modules\user\Module',
+            'passwordResetTokenExpire' => 3600,
         ],
     ],
     'components' => [

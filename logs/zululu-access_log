@@ -753,3 +753,6 @@
 127.0.0.1 - - [15/Dec/2016:15:04:47 +0300] "GET /debug/default/toolbar?tag=585286df379f4 HTTP/1.1" 200 3523
 127.0.0.1 - - [15/Dec/2016:15:04:49 +0300] "GET /admin/users/1/update HTTP/1.1" 200 8066
 127.0.0.1 - - [15/Dec/2016:15:04:49 +0300] "GET /debug/default/toolbar?tag=585286e1ae281 HTTP/1.1" 200 3527
+127.0.0.1 - - [16/Dec/2016:11:02:18 +0300] "GET / HTTP/1.1" 200 7256
+127.0.0.1 - - [16/Dec/2016:11:02:20 +0300] "GET /css/site.css HTTP/1.1" 200 1103
+127.0.0.1 - - [16/Dec/2016:11:02:20 +0300] "GET /debug/default/toolbar?tag=58539f8b2925d HTTP/1.1" 200 3526
