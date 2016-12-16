@@ -1,6 +1,27 @@
 <?php
 $config = [
     'id' => 'app',
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+            'layout' => '@app/views/layouts/admin',
+            'modules' => [
+                'user' => [
+                    'class' => 'app\modules\user\Module',
+                    'controllerNamespace' => 'app\modules\user\controllers\backend',
+                    'viewPath' => '@app/modules/user/views/backend',
+                ],
+            ]
+        ],
+        'main' => [
+            'class' => 'app\modules\main\Module',
+        ],
+        'user' => [
+            'class' => 'app\modules\user\Module',
+            'controllerNamespace' => 'app\modules\user\controllers\frontend',
+            'viewPath' => '@app/modules/user/views/frontend',
+        ],
+    ],
     'defaultRoute' => 'main/default/index',
     'language' => 'ru-RU',
     'components' => [

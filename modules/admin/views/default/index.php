@@ -13,6 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Module::t('module', 'ADMIN_USERS'), ['users/index'], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Module::t('module', 'ADMIN_USERS'), ['default/index'], ['class' => 'btn btn-primary']) ?>
     </p>
 </div>

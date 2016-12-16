@@ -7,7 +7,7 @@ use Yii;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'app\modules\user\controllers';
+
     /**
      * @var int
      */

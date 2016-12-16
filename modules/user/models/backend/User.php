@@ -6,7 +6,7 @@
  * Time: 0:13
  */
 
-namespace app\modules\admin\models;
+namespace app\modules\user\models\backend;
 
 use yii\helpers\ArrayHelper;
 use Yii;
