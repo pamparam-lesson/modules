@@ -1,11 +1,13 @@
 <?php
 namespace app\modules\user\controllers;
 
-use app\modules\user\models\forms\EmailConfirmForm;
-use app\modules\user\models\forms\LoginForm;
-use app\modules\user\models\forms\PasswordResetRequestForm;
-use app\modules\user\models\forms\PasswordResetForm;
-use app\modules\user\models\forms\SignupForm;
+use app\modules\user\models\forms\{
+    EmailConfirmForm,
+    LoginForm,
+    PasswordResetRequestForm,
+    PasswordResetForm,
+    SignupForm
+};
 use yii\base\InvalidParamException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
