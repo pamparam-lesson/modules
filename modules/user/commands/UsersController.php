@@ -9,6 +9,11 @@ use yii\helpers\Console;
 
 class UsersController extends Controller
 {
+    /**
+     * @var \app\modules\user\Module
+     */
+    public $module;
+
     public function actionIndex()
     {
         echo 'yii users/create' . PHP_EOL;
@@ -102,5 +107,33 @@ class UsersController extends Controller
             $this->stderr('Error!', Console::FG_RED, Console::BOLD);
         }
         echo PHP_EOL;
+    }
+
+
+
+    /**
+     * foreach (User::find()->overdue($timeout)->each() as $user) {
+     *     //  @var User $user
+           $user->delete();
+     * }
+     * Removes non-activated expired users
+     */
+    public function actionRemoveOverdue()
+    {
+        foreach (User::find()->overdue($this->module->emailConfirmTokenExpire)->each() as $user) {
+            /** @var User $user */
+            $this->stdout($user->username);
+            if ($user->delete()) {
+                Yii::info('Remove expired user ' . $user->username);
+                $this->stdout(' OK', Console::FG_GREEN, Console::BOLD);
+            } else {
+                Yii::warning('Cannot remove expired user ' . $user->username);
+                $this->stderr(' FAIL', Console::FG_RED, Console::BOLD);
+            }
+            $this->stdout(PHP_EOL);
+        }
+
+        $this->stdout('Done!', Console::FG_GREEN, Console::BOLD);
+        $this->stdout(PHP_EOL);
     }
 }

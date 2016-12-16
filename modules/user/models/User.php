@@ -9,6 +9,7 @@ use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use yii\base\NotSupportedException;
 use app\modules\user\Module;
+use app\modules\user\models\query\UserQuery;
 
 /**
  * This is the model class for table "{{%user}}".
@@ -105,25 +106,54 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
+    /**
+     * @return UserQuery
+     */
+    public static function find()
+    {
+        return Yii::createObject(UserQuery::className(), [get_called_class()]);
+    }
+
+    /**
+     * @param int|string $id
+     * @return static
+     */
     public static function findIdentity($id)
     {
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
 
+    /**
+     * @param mixed $token
+     * @param null $type
+     * @throws NotSupportedException
+     */
     public static function findIdentityByAccessToken($token, $type = null)
     {
         throw new NotSupportedException('findIdentityByAccessToken is not implemented.');
     }
 
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->getPrimaryKey();
     }
 
+    /**
+     * @return string
+     */
+
     public function getAuthKey()
     {
         return $this->auth_key;
     }
+
+    /**
+     * @param string $authKey
+     * @return bool
+     */
 
     public function validateAuthKey($authKey)
     {
