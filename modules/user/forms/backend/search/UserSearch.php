@@ -69,14 +69,17 @@ class UserSearch extends Model
             return $dataProvider;
         }
 
+
         $query->andFilterWhere([
             'id' => $this->id,
             'status' => $this->status,
+            'role' => $this->role,
         ]);
 
         $query
             ->andFilterWhere(['like', 'username', $this->username])
             ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'role', $this->role])
             ->andFilterWhere(['>=', 'created_at', $this->date_from ? strtotime($this->date_from . ' 00:00:00') : null])
             ->andFilterWhere(['<=', 'created_at', $this->date_to ? strtotime($this->date_to . ' 23:59:59') : null]);
 
