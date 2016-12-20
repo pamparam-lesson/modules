@@ -11,8 +11,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="admin-default-index">
     <h1><?= Html::encode($this->title) ?></h1>
-
     <p>
-        <?= Html::a(Module::t('module', 'ADMIN_USERS'), ['default/index'], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Module::t('module', 'ADMIN_USERS'), ['/admin/user/default/index'], ['class' => 'btn btn-primary']) ?>
     </p>
 </div>

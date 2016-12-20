@@ -1,10 +1,11 @@
 <?php
 $config = [
     'id' => 'app',
+    'layout' => '@app/views/frontend/main',
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
-            'layout' => '@app/views/layouts/admin',
+            'layout' => '@app/views/backend/admin',
             'modules' => [
                 'user' => [
                     'class' => 'app\modules\user\Module',
