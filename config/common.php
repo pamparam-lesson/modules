@@ -54,6 +54,13 @@ return [
                 '<_m:[\w\-]+>/<_c:[\w\-]+>/<id:\d+>/<_a:[\w\-]+>' => '<_m>/<_c>/<_a>',
             ],
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            //зададим куда будут сохраняться наши файлы конфигураций RBAC
+            'itemFile' => '@app/components/rbac/items.php',
+            'assignmentFile' => '@app/components/rbac/assignments.php',
+            'ruleFile' => '@app/components/rbac/rules.php',
+        ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
         ],
