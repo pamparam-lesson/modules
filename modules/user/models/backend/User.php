@@ -23,6 +23,9 @@ class User extends \app\modules\user\models\User
     public function rules()
     {
         return ArrayHelper::merge(parent::rules(), [
+            ['username', 'unique','on' => self::SCENARIO_ADMIN_CREATE],
+
+            ['email', 'unique','on' => self::SCENARIO_ADMIN_CREATE],
             [['newPassword', 'newPasswordRepeat'], 'required', 'on' => self::SCENARIO_ADMIN_CREATE],
             ['newPassword', 'string', 'min' => 6],
             ['newPasswordRepeat', 'compare', 'compareAttribute' => 'newPassword'],
@@ -32,8 +35,8 @@ class User extends \app\modules\user\models\User
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios[self::SCENARIO_ADMIN_CREATE] = ['username', 'email', 'status', 'newPassword', 'newPasswordRepeat'];
-        $scenarios[self::SCENARIO_ADMIN_UPDATE] = ['username', 'email', 'status', 'newPassword', 'newPasswordRepeat'];
+        $scenarios[self::SCENARIO_ADMIN_CREATE] = ['username', 'email', 'status', 'role', 'newPassword', 'newPasswordRepeat'];
+        $scenarios[self::SCENARIO_ADMIN_UPDATE] = ['username', 'email', 'status', 'role', 'newPassword', 'newPasswordRepeat'];
         return $scenarios;
     }
 
