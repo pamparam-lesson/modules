@@ -6,7 +6,7 @@
  * Time: 20:04
  */
 
-namespace app\modules\user\models\forms;
+namespace app\modules\user\forms\frontend;
 
 use app\modules\user\models\User;
 use yii\base\Model;

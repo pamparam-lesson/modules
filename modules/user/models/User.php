@@ -80,7 +80,7 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     /**
-     * access edit profile admin or users
+     * access edit profile admin or default
      * @return array
      */
 

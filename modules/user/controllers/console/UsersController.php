@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\user\commands;
+namespace app\modules\user\controllers\console;
 
 use app\modules\user\models\User;
 use yii\base\Model;
@@ -16,10 +16,10 @@ class UsersController extends Controller
 
     public function actionIndex()
     {
-        echo 'yii users/create' . PHP_EOL;
-        echo 'yii users/remove' . PHP_EOL;
-        echo 'yii users/activate' . PHP_EOL;
-        echo 'yii users/change-password' . PHP_EOL;
+        echo 'yii default/create' . PHP_EOL;
+        echo 'yii default/remove' . PHP_EOL;
+        echo 'yii default/activate' . PHP_EOL;
+        echo 'yii default/change-password' . PHP_EOL;
     }
 
     public function actionCreate()

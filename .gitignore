@@ -30,4 +30,4 @@ tests/_
 output/*
 tests/_support/_generated
 .gitignore
-logs
+logs/

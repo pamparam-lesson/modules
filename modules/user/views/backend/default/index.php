@@ -1,16 +1,18 @@
 <?php
 
-use app\modules\admin\models\User;
-use app\components\grid\SetColumn;
-use app\components\grid\ActionColumn;
+use app\modules\user\models\User;
+use app\components\grid\{
+    SetColumn,
+    ActionColumn,
+    LinkColumn
+};
 use kartik\date\DatePicker;
-use app\components\grid\LinkColumn;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use app\modules\user\Module;
 /* @var $this yii\web\View */
-/* @var $searchModel app\modules\admin\models\UserSearch */
+/* @var $searchModel app\modules\user\models\User */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Module::t('module', 'ADMIN_USERS');

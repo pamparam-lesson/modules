@@ -1,12 +1,12 @@
 <?php
 
-use app\modules\admin\models\User;
+use app\modules\user\models\User;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\modules\user\Module;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\admin\models\User */
+/* @var $model app\modules\user\models\User */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 

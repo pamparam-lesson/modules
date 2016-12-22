@@ -6,3 +6,4 @@
 [Wed Dec 14 22:35:56.203148 2016] [access_compat:error] [pid 16596] [client 127.0.0.1:41796] AH01797: client denied by server configuration: /media/pamparam/progi/OpenServer/domains/zululu/web/, referer: http://zululu/web/user/profile
 [Wed Dec 14 22:35:56.633328 2016] [access_compat:error] [pid 16596] [client 127.0.0.1:41796] AH01797: client denied by server configuration: /media/pamparam/progi/OpenServer/domains/zululu/web/, referer: http://zululu/web/user/profile
 [Wed Dec 14 22:36:03.678214 2016] [access_compat:error] [pid 6481] [client 127.0.0.1:41798] AH01797: client denied by server configuration: /media/pamparam/progi/OpenServer/domains/zululu/web/, referer: http://zululu/web/user/profile
+[Tue Dec 20 09:34:25.893704 2016] [:error] [pid 5345] [client 127.0.0.1:33238] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /mnt/progi/OpenServer/domains/zululu/config/web.php on line 57

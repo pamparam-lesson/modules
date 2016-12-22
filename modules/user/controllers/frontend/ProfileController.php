@@ -1,7 +1,8 @@
 <?php
-namespace app\modules\user\controllers;
+namespace app\modules\user\controllers\frontend;
 
-use app\modules\user\models\forms\{ProfileUpdateForm,PasswordChangeForm};
+use app\modules\user\forms\frontend\PasswordChangeForm;
+use app\modules\user\forms\frontend\{ProfileUpdateForm};
 use app\modules\user\models\User;
 use yii\filters\AccessControl;
 use yii\web\Controller;
