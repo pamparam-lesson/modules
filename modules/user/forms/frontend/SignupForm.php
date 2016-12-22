@@ -16,6 +16,13 @@ class SignupForm extends Model
     public $password;
     public $verifyCode;
 
+    private $_defaultRole;
+
+    public function __construct($defaultRole, $config = [])
+    {
+        $this->_defaultRole = $defaultRole;
+        parent::__construct($config);
+    }
     public function rules()
     {
         return [
@@ -57,6 +64,7 @@ class SignupForm extends Model
      *
      * @return User|null the saved model or null if saving fails
      */
+
     public function signup()
     {
         if ($this->validate()) {
@@ -65,6 +73,7 @@ class SignupForm extends Model
             $user->email = $this->email;
             $user->setPassword($this->password);
             $user->status = User::STATUS_WAIT;
+            $user->role = $this->_defaultRole;
             $user->generateAuthKey();
             $user->generateEmailConfirmToken();
 

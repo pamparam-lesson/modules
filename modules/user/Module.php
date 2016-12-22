@@ -9,6 +9,10 @@ class Module extends \yii\base\Module
 {
 
     /**
+     * @var string
+     */
+    public $defaultRole = 'user';
+    /**
      * @var int
      */
     public $emailConfirmTokenExpire = 259200; // 3 days

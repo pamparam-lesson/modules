@@ -5,6 +5,7 @@ use app\modules\user\models\backend\User;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use app\modules\user\Module;
 
 class UserSearch extends Model
 {
@@ -20,12 +21,13 @@ class UserSearch extends Model
     public $auth_key;
     public $date_from;
     public $date_to;
+    public $role;
 
     public function rules()
     {
         return [
             [['id', 'status'], 'integer'],
-            [['username', 'email'], 'safe'],
+            [['role','username', 'email'], 'safe'],
             [['date_from', 'date_to'], 'date', 'format' => 'php:Y-m-d'],
         ];
     }
@@ -34,13 +36,14 @@ class UserSearch extends Model
     {
         return [
             'id' => 'ID',
-            'created_at' => Yii::t('app', 'USER_CREATED'),
-            'updated_at' => Yii::t('app', 'USER_UPDATED'),
-            'username' => Yii::t('app', 'USER_USERNAME'),
-            'email' => Yii::t('app', 'USER_EMAIL'),
-            'status' => Yii::t('app', 'USER_STATUS'),
-            'date_from' => Yii::t('app', 'USER_DATE_FROM'),
-            'date_to' => Yii::t('app', 'USER_DATE_TO'),
+            'created_at' => Module::t('module', 'USER_CREATED'),
+            'updated_at' => Module::t('module', 'USER_UPDATED'),
+            'username' => Module::t('module', 'USER_USERNAME'),
+            'email' => Module::t('module', 'USER_EMAIL'),
+            'status' => Module::t('module', 'USER_STATUS'),
+            'date_from' => Module::t('module', 'USER_DATE_FROM'),
+            'date_to' => Module::t('module', 'USER_DATE_TO'),
+            'role' => Module::t('module', 'USER_ROLE'),
         ];
     }
 
@@ -79,7 +82,6 @@ class UserSearch extends Model
         $query
             ->andFilterWhere(['like', 'username', $this->username])
             ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'role', $this->role])
             ->andFilterWhere(['>=', 'created_at', $this->date_from ? strtotime($this->date_from . ' 00:00:00') : null])
             ->andFilterWhere(['<=', 'created_at', $this->date_to ? strtotime($this->date_to . ' 23:59:59') : null]);
 

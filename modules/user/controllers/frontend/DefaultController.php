@@ -14,6 +14,7 @@ use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use Yii;
+use app\modules\user\Module;
 
 class DefaultController extends Controller
 {
@@ -93,12 +94,13 @@ class DefaultController extends Controller
         return $this->goHome();
     }
 
+
     public function actionSignup()
     {
-        $model = new SignupForm();
+        $model = new SignupForm($this->module->defaultRole);
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
-                Yii::$app->getSession()->setFlash('success', 'Подтвердите ваш электронный адрес.');
+                Yii::$app->getSession()->setFlash('success', Module::t('module', 'FLASH_EMAIL_CONFIRM_REQUEST'));
                 return $this->goHome();
             }
         }

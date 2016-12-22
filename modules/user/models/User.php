@@ -76,7 +76,6 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => array_keys(self::getStatusesArray())],
             ['role', 'string', 'max' => 64],
-            'role' => Module::t('module', 'USER_ROLE'),
         ];
     }
 

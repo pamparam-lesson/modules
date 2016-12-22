@@ -6,8 +6,9 @@ use app\components\grid\{
     ActionColumn,
     LinkColumn
 };
+use app\modules\user\widgets\backend\grid\RoleColumn;
 use kartik\date\DatePicker;
-use yii\helpers\Html;
+use yii\helpers\{Html, ArrayHelper};
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use app\modules\user\Module;
@@ -60,7 +61,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     User::STATUS_BLOCKED => 'default',
                 ],
             ],
-
+            [
+                'class' => RoleColumn::className(),
+                'filter' => ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'description'),
+                'attribute' => 'role',
+            ],
             ['class' => ActionColumn::className()],
         ],
     ]); ?>
