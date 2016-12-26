@@ -6,7 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
-class UserController extends Controller
+class LoginController extends Controller
 {
     /**
      * @var \app\modules\user\Module
@@ -34,7 +34,7 @@ class UserController extends Controller
             ],
         ];
     }
-    public function actionLogin()
+    public function actionIndex()
     {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -43,7 +43,7 @@ class UserController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
-            return $this->render('login', [
+            return $this->render('index', [
                 'model' => $model,
             ]);
         }

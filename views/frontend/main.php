@@ -31,9 +31,9 @@ echo Nav::widget([
         Yii::$app->user->isGuest ?
             ['label' => Yii::t('app', 'NAV_LOGIN'), 'url' => ['/user/default/login']] :
             false,
-        !Yii::$app->user->can(AdminRbac::PERMISSION_ADMIN_PANEL) ?
-            ['label' => Yii::t('app', 'NAV_ADMIN'), 'url' => ['/admin/default/index']] :
-            false,
+//        !Yii::$app->user->can(AdminRbac::PERMISSION_ADMIN_PANEL) ?
+//            ['label' => Yii::t('app', 'NAV_ADMIN'), 'url' => ['/admin/default/index']] :
+//            false,
         !Yii::$app->user->isGuest ?
             ['label' => Yii::t('app', 'NAV_PROFILE'), 'items' => [
                 ['label' => Yii::t('app', 'NAV_PROFILE'), 'url' => ['/user/profile/index']],

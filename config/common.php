@@ -56,7 +56,7 @@ return [
         ],
         'authManager' => [
             'class' => 'app\components\AuthManager',
-            //зададим куда будут сохраняться наши файлы конфигураций RBAC
+            //add files config RBAC
             'itemFile' => '@app/components/rbac/items.php',
             'assignmentFile' => '@app/components/rbac/assignments.php',
             'ruleFile' => '@app/components/rbac/rules.php',

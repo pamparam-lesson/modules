@@ -10,8 +10,12 @@ $this->title = Module::t('module', 'TITLE_LOGIN');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-default-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-
+    <h1><?= Yii::$app->controller->module->id . '/'. Yii::$app->controller->id . '/' . Yii::$app->controller->action->id ?>77777tttttttttttttttttt</h1>
+    <?php
+    echo 'Текущий контроллер - '.Yii::$app->controller->id;
+    echo 'Текущий action - '.Yii::$app->controller->action->id;
+    echo 'Текущий модуль (module) - '.Yii::$app->controller->module->id;
+    ?>
     <p><?= Module::t('module', 'PLEASE_FILL_FOR_LOGIN') ?></p>
 
     <div class="row">

@@ -23,9 +23,7 @@ class User extends \app\modules\user\models\User
     public function rules()
     {
         return ArrayHelper::merge(parent::rules(), [
-            ['username', 'unique','on' => self::SCENARIO_ADMIN_CREATE],
 
-            ['email', 'unique','on' => self::SCENARIO_ADMIN_CREATE],
             [['newPassword', 'newPasswordRepeat'], 'required', 'on' => self::SCENARIO_ADMIN_CREATE],
             ['newPassword', 'string', 'min' => 6],
             ['newPasswordRepeat', 'compare', 'compareAttribute' => 'newPassword'],

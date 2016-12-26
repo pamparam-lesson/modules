@@ -11,15 +11,23 @@ class Module extends \yii\base\Module
 {
     public $controllerNamespace = 'app\modules\admin\controllers';
 
+    public function beforeAction($action)
+    {
+        Yii::$app->user->loginUrl = ['/admin/user/login'];
+        return parent::beforeAction($action);
+    }
+
     public function behaviors()
     {
         return [
             'access' => [
                 'class' => AccessControl::className(),
+                'except' => ['user/login/index'],
                 'rules' => [
                     [
                         'allow' => true,
                         'roles' => [AdminRbac::PERMISSION_ADMIN_PANEL],
+
                     ],
                 ],
             ],
