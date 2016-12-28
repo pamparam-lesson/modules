@@ -21,6 +21,7 @@ return [
     'CONFIRM_DELETE' => 'Are you sure you want to delete this item?',
     'LINK_PASSWORD_CHANGE' => 'Change password',
     'LINK_PASSWORD_RESET' => 'Reset password',
+    'LINK_BACK' => 'Back',
     'USER_FORGOT_PASSWORD' => 'Lost your password?',
     'USER_USERNAME' => 'Username',
     'USER_PASSWORD' => 'Password',

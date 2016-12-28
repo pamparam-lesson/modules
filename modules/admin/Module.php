@@ -22,7 +22,7 @@ class Module extends \yii\base\Module
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'except' => ['user/login/index'],
+                'except' => ['user/login/index','user/login/password-reset-request'],
                 'rules' => [
                     [
                         'allow' => true,
