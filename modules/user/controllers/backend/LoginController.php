@@ -12,6 +12,8 @@ class LoginController extends Controller
      * @var \app\modules\user\Module
      */
     public $module;
+    public $layout = 'login';
+
     public function behaviors()
     {
         return [

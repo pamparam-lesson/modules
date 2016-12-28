@@ -10,24 +10,29 @@ $this->title = Module::t('module', 'TITLE_LOGIN');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-default-login">
-    <h1><?= Yii::$app->controller->module->id . '/'. Yii::$app->controller->id . '/' . Yii::$app->controller->action->id ?>77777tttttttttttttttttt</h1>
-    <?php
-    echo 'Текущий контроллер - '.Yii::$app->controller->id;
-    echo 'Текущий action - '.Yii::$app->controller->action->id;
-    echo 'Текущий модуль (module) - '.Yii::$app->controller->module->id;
-    ?>
-    <p><?= Module::t('module', 'PLEASE_FILL_FOR_LOGIN') ?></p>
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+                    <h1><?= Module::t('module','TITLE_LOGIN')?></h1>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-            <?= $form->field($model, 'username') ?>
-            <?= $form->field($model, 'password')->passwordInput() ?>
-            <?= $form->field($model, 'rememberMe')->checkbox() ?>
-            <div class="form-group">
-                <?= Html::submitButton(Module::t('module', 'USER_BUTTON_LOGIN'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-            </div>
-            <?php ActiveForm::end(); ?>
+                        <?= $form->field($model, 'username', [
+                            'inputOptions' => [
+                                'placeholder' => $model->getAttributeLabel('username'),
+                            ],
+                        ])->label(false); ?>
+
+                        <?= $form->field($model, 'password')->passwordInput([
+                                'placeholder' => $model->getAttributeLabel('password'),
+                        ])->label(false);?>
+
+                        <?= $form->field($model, 'rememberMe')->checkbox() ?>
+
+                        <?= Html::submitButton(Module::t('module', 'USER_BUTTON_LOGIN'), ['class' => 'btn btn-lg btn-primary btn-block', 'name' => 'login-button']) ?>
+
+                <?php ActiveForm::end(); ?>
+                <?= Html::a(Module::t('module','LINK_FORGOT_PASSWORD'), ['password-reset-request']) ?>
+            </section>
         </div>
     </div>
 </div>

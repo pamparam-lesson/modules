@@ -1,12 +1,12 @@
 <?php
 return [
     'TITLE_SIGNUP' => 'Регистрация',
-    'TITLE_LOGIN' => 'Вход',
+    'TITLE_LOGIN' => 'Войти',
     'TITLE_PROFILE' => 'Профиль',
     'TITLE_CONTACT' => 'Обратная связь',
     'TITLE_PASSWORD_CHANGE' => 'Смена пароля',
     'TITLE_PASSWORD_RESET' => 'Восстановление пароля',
-    'TITLE_PROFILE_UPDATE' => 'Update',
+    'TITLE_PROFILE_UPDATE' => 'Изменение профиля',
     'ADMIN_USERS' => 'Пользователи',
     'ADMIN_USERS_ADD' => 'Добавить пользователя',
     'USER_DATE_FROM' => 'Дата с',
@@ -21,6 +21,7 @@ return [
     'CONFIRM_DELETE' => 'Удалить запись?',
     'LINK_PASSWORD_CHANGE' => 'Сменить пароль',
     'LINK_PASSWORD_RESET' => 'Восстановить пароль',
+    'LINK_FORGOT_PASSWORD' => 'Забыли пароль?',
     'USER_USERNAME' => 'Имя пользователя',
     'USER_PASSWORD' => 'Пароль',
     'USER_NEW_PASSWORD' => 'Новый пароль',

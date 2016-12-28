@@ -22,7 +22,9 @@
         "bower-asset/html5shiv": "*",
         "bower-asset/respond": "*",
         "kartik-v/yii2-widget-datepicker": "*",
-        "kartik-v/yii2-field-range": "*"
+        "kartik-v/yii2-field-range": "*",
+        "bower-asset/animate.css": "^3.5",
+        "bower-asset/font-awesome-animation": "^0.0.9"
 
     },
     "require-dev": {
