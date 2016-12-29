@@ -24,7 +24,9 @@
         "kartik-v/yii2-widget-datepicker": "*",
         "kartik-v/yii2-field-range": "*",
         "bower-asset/animate.css": "^3.5",
-        "bower-asset/font-awesome-animation": "^0.0.9"
+        "bower-asset/font-awesome-animation": "^0.0.9",
+        "bower-asset/nprogress": "^0.2.0",
+        "bower-asset/fastclick": "^1.0"
 
     },
     "require-dev": {

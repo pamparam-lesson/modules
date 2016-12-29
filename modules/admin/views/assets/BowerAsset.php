@@ -2,22 +2,26 @@
 /**
  * Created by PhpStorm.
  * User: pamparam
- * Date: 13.12.16
- * Time: 10:42
+ * Date: 29.12.16
+ * Time: 0:06
  */
 
-namespace app\assets;
-
+namespace app\modules\admin\views\assets;
 
 use yii\web\AssetBundle;
 
-
-class FontAwesomeAsset extends AssetBundle
+class BowerAsset extends AssetBundle
 {
 
     // Эти файлы не доступны нам из web, так что мы определяем свойство sourcePath.
     // Обратите внимание, что используется алиас @vendor
-    public $sourcePath = '@vendor/fortawesome/font-awesome';
-    public $css = [ 'css/font-awesome.css',];
+    public $sourcePath = '@bower';
+    public $css = [
+        'nprogress/nprogress.css',
+    ];
+    public $js = [
+        'fastclick/lib/fastclick.js',
+        'nprogress/nprogress.js',
+    ];
 
 }

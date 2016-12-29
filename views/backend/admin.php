@@ -3,10 +3,8 @@
 use app\components\widgets\Alert;
 use app\modules\admin\Module;
 use yii\helpers\ArrayHelper;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
+use yii\bootstrap\{Nav , NavBar};
 use yii\widgets\Breadcrumbs;
-use app\modules\admin\rbac\Rbac as AdminRbac;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -37,7 +35,6 @@ echo Nav::widget([
     'activateParents' => true,
     'items' => array_filter([
         ['label' => Yii::t('app', 'NAV_ADMIN'), 'url' => ['/admin/default/index']],
-        ['label' => Yii::t('app', 'NAV_login'), 'url' => ['/admin/login']],
         ['label' => Yii::t('app', 'NAV_ADMIN_USERS'), 'url' => ['/admin/user/default/index'], 'active' => $context->module->id == 'user'],
         ['label' => Yii::t('app', 'NAV_LOGOUT'), 'url' => ['/user/default/logout'], 'linkOptions' => ['data-method' => 'post']]
     ]),
