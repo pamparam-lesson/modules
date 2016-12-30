@@ -31,3 +31,4 @@ output/*
 tests/_support/_generated
 .gitignore
 logs/
+logs/zululu-access _log
