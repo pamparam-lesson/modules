@@ -2,8 +2,6 @@
 
 use app\components\widgets\Alert;
 use app\modules\admin\Module;
-use yii\helpers\ArrayHelper;
-use yii\bootstrap\{Nav , NavBar};
 use yii\widgets\Breadcrumbs;
 
 /* @var $this \yii\web\View */
@@ -23,7 +21,9 @@ if (isset($this->params['breadcrumbs'])) {
 <?php $this->beginContent('@app/views/backend/layout.php'); ?>
 
 <!-- top navigation -->
-<?= $this->render('layout/_menu'); ?>
+<?= $this->render('layout/_menu',[
+    'context' => $context,
+]); ?>
 <!-- /top navigation -->
 
 <!-- top navigation -->
@@ -44,32 +44,4 @@ if (isset($this->params['breadcrumbs'])) {
 <!-- /page content -->
 
 <?php $this->endContent(); ?>
-<!---->
-<?php
-//NavBar::begin([
-//    'brandLabel' => Yii::$app->name,
-//    'brandUrl' => Yii::$app->homeUrl,
-//    'options' => [
-//        'class' => 'navbar-inverse navbar-fixed-top',
-//    ],
-//]);
-//echo Nav::widget([
-//    'options' => ['class' => 'navbar-nav navbar-right'],
-//    'activateParents' => true,
-//    'items' => array_filter([
-//        ['label' => Yii::t('app', 'NAV_ADMIN'), 'url' => ['/admin/default/index']],
-//        ['label' => Yii::t('app', 'NAV_ADMIN_USERS'), 'url' => ['/admin/user/default/index'], 'active' => $context->module->id == 'user'],
-//        ['label' => Yii::t('app', 'NAV_LOGOUT'), 'url' => ['/user/default/logout'], 'linkOptions' => ['data-method' => 'post']]
-//    ]),
-//]);
-//NavBar::end();
-//?>
-<!---->
-<!--<div class="container">-->
-<!--    --><?//= Breadcrumbs::widget([
-//        'links' => ArrayHelper::merge($panelBreadcrumbs, $breadcrumbs),
-//    ]) ?>
-<!---->
-<!--    --><?//= Alert::widget() ?>
-<!--    --><?//= $content ?>
-<!--</div>-->
+

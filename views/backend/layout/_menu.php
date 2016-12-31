@@ -1,7 +1,12 @@
+<?php
+use yii\helpers\Html;
+use yii\widgets\Menu;
+/** @var \yii\web\Controller $context */
+?>
 <div class="col-md-3 left_col menu_fixed">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
+            <a href="/admin" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
         </div>
 
         <div class="clearfix"></div>
@@ -13,12 +18,12 @@
             </div>
             <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2><?= Html::encode(Yii::$app->user->identity->username); ?></h2>
             </div>
         </div>
         <!-- /menu profile quick info -->
 
-        <br />
+        <br/>
 
         <!-- sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -76,8 +81,34 @@
                             <li><a href="fixed_footer.html">Fixed Footer</a></li>
                         </ul>
                     </li>
+
                 </ul>
+
+                <?php
+                echo Menu::widget([
+                    'items' => [
+                        ['label' => 'Users',
+//                            'url' => '',
+                            'template' => '<a><i class="fa fa-users"></i>{label}<span class="fa fa-chevron-down"></span></a>',
+                            'items' => [
+                                ['label' => Yii::t('app', 'NAV_ADMIN'), 'url' => ['/admin/default/index']],
+                                ['label' => Yii::t('app', 'NAV_ADMIN_USERS'), 'url' => ['/admin/user/default/index'], 'active' => $context->module->id == 'user'],
+                                ['label' => Yii::t('app', 'NAV_LOGOUT'), 'url' => ['/user/default/logout'], 'linkOptions' => ['data-method' => 'post']]
+                            ]
+                        ],
+                    ],
+                    'options' => [
+//                        'id'=>'navid',
+                        'class' => 'nav side-menu',
+//                        'style'=>'float: left; font-size: 16px;',
+//                        'data'=>'menu',
+                    ],
+
+                    'submenuTemplate' => "\n<ul class='nav child_menu' >\n{items}\n</ul>\n",
+                ]);
+                ?>
             </div>
+
             <div class="menu_section">
                 <h3>Live On</h3>
                 <ul class="nav side-menu">
@@ -117,7 +148,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span
+                                class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
             </div>
 
@@ -135,6 +167,7 @@
             <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
             </a>
+            <?php echo Html::a('',['/user/default/logout'],['data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => Yii::t('app', 'NAV_LOGOUT')])?>
             <a data-toggle="tooltip" data-placement="top" title="Logout">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>

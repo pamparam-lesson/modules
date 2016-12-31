@@ -26,7 +26,7 @@ class AdminAsset extends AssetBundle
         'app\assets\Html5ShivAsset',
         'app\assets\RespondAsset',
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'app\modules\admin\views\assets\BootstrapAsset',
         'app\assets\FontAwesomeAsset',
         'app\modules\admin\views\assets\BowerAsset',
 
