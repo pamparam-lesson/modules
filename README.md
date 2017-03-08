@@ -38,3 +38,9 @@ Assign `admin` role to your user:
 ~~~
 php yii roles/assign
 ~~~
+
+if error fxp/composer-asset-plugin 
+~~~
+composer global require fxp/composer-asset-plugin --no-plugins 
+composer global update fxp/composer-asset-plugin --no-plugins 
+~~~
